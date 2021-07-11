@@ -11,6 +11,8 @@ http://localhost:3000/
 The Back runs in:
 http://localhost:1337/
 
+ApiKey=0e83c042-434b-432e-abd6-8fede268c0ce
+
 MongoDB URL is:
 mongodb://localhost:27018/fifa_ultimate_21
 
