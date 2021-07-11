@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  api_fifa_21:
+    container_name: "api_fifa_21"
+    restart: always
+    build: ./back_fifa_21
+    ports:
+      - "1337:1337"
+    links:
+      - "database"
+    environment:
+      - API_KEY=0e83c042-434b-432e-abd6-8fede268c0ce
+    volumes:
+      - .:/urs/src/app
+  client:
+    container_name: "client-container"
+    restart: always
+    build: ./front
+    ports:
+      - "3000:3000"
+    links:
+      - "api_fifa_21"
+    environment:
+      - REACT_APP_API_KEY=0e83c042-434b-432e-abd6-8fede268c0ce
+  database:
+    container_name: "mongo"
+    image: "mongo"
+    ports:
+      - "27018:27017"
+    logging:
+      driver: none
