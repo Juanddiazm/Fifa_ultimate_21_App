@@ -2,7 +2,9 @@
 
 The application is configured to work with docker-compose
 To build the app:
+
 **sudo docker-compose build**
+
 **sudo docker-compose up**
 
 **The front runs in**:
